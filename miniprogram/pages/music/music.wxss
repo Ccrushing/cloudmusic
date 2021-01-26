@@ -1,0 +1,8 @@
+/* pages/music/music.wxss */
+.swiper{
+  height: 340rpx;
+}
+.img{
+  width: 100%;
+  height: 100%;
+}

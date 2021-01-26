@@ -1,0 +1,8 @@
+<!--pages/music/music.wxml-->
+<swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" 
+ interval="3000" duration="1000" 
+  class="swiper">
+  <swiper-item wx:for="{{imgUrls}}">
+    <image src="{{item.url}}" class="img" mode="scaleToFil"></image>
+  </swiper-item>
+</swiper>

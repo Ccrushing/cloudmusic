@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/music/music",
+    "pages/find/find",
+    "pages/profile/profile",
+    "pages/test/test"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#d43c33",
+    "navigationBarTitleText": "云音乐",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#474747",
+    "selectedColor": "#d43c43",
+    "list": [
+      {
+        "pagePath": "pages/music/music",
+        "text": "音乐",
+        "iconPath": "images/tab/music.png",
+        "selectedIconPath": "images/tab/music-actived.png"
+        
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "images/tab/find.png",
+        "selectedIconPath": "images/tab/find-actived.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/tab/profile.png",
+        "selectedIconPath": "images/tab/profile-actived.png"
+      }
+
+    ]
+
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
