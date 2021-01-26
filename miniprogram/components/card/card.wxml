@@ -1,0 +1,3 @@
+<!--components/chatroom/card/card.wxml-->
+<text class="card">这是一个卡片组件</text>
+

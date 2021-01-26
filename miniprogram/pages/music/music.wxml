@@ -2,7 +2,14 @@
 <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" 
  interval="3000" duration="1000" 
   class="swiper">
-  <swiper-item wx:for="{{imgUrls}}">
+  <swiper-item wx:for="{{imgUrls}}" wx:key="id">
     <image src="{{item.url}}" class="img" mode="scaleToFil"></image>
   </swiper-item>
 </swiper>
+
+<text class="title">场景歌单</text>
+<view class="playlist-container">
+  <block wx:for="{{playlist}}" wx:key="id">
+    <x-playlist playlist="{{item}}"></x-playlist>
+  </block>
+</view>

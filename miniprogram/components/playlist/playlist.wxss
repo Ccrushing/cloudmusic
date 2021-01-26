@@ -1,0 +1,34 @@
+/* components/playlist/playlist.wxss */
+.playlist-container{
+  width: 220rpx;
+  position: relative;
+  padding-bottom: 20rpx;
+}
+
+.playlist-img {
+  width: 100%;
+  height: 220rpx;
+  border-radius: 10rpx;
+}
+
+.playlist-playcount {
+  font-size:24rpx;
+  color:#fff;
+  text-shadow: 1px 0 0 rgba(0, 0,0,0.15);
+  position: absolute;
+  right: 10rpx;
+  top:4rpx;
+  padding-left:26rpx ;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAExUlEQVR4Xu2aa2gcVRTH/2eWuCVBjWKT3Duz4uuDRXzh44MPbFCR+sA3grQfWtAINaLUih8UKwqi1Heo+sn6AlEColJaEVtstaBWRcEP5sNqs3NmzAoqFNGQuUeubCCJm8zO7EzsdufCEDZz7nn87rn3nrkzhC5v1OXxowBQZECXEyimQJcnQLEIFlOgmAJdTmDZp0AYhgPGmBMBzF52CA7ay3Gcg0NDQ1PLOSbLAqBWq13rOM71AG4AcEJMgHUReddxnB0isltr/WeeQHIDUK/X1fT09IjjOGtF5FQbhIgwEX0B4CcAPzf+kjHmFCL69wJwMYCjG0HXAYwT0YtKqR/yAJE5gDmB3yEiGsAuAPuI6COllA0+tk1OTq4ulUpXiMjVRHQuER0SkbEoisYqlYofqyCBQKYAJicnLyyVSq8BOB3A98aYpz3Ps79TtWq1uqJcLm8SkfuJqB/Aj1EUjVQqlT2pFDbplBmAMAwvF5E3RESJyKM9PT1bBwYGDmXhKDOvEpFHiOg2AH9FUbQmKwiZAGDmmwC8BWCFDd513S1ZBL5QBzO/AuBO+/8oioazgNA2gKmpqdNmZmY+AVDJM/hZGL7vP0lED9jfvb29x/f39//WDuy2Afi+/7ZNTSLarpRa344zrfZlZptttwPYo7UebrVfM7m2AIRhOGqMecFuZ0Q0rJSy21vuLQzDM6Mo2ktExwJ4Rmu9Ka3R1ACCIFgpIl8D8Iwx6z3P257WiTT9fN9/kIieaHc9aAfAZhF5CsDHWusr0wTRbh9m/gbAOSKyzXXdjWn0pQIwMTFR7uvrs8ZXEdEGpdSraYy324eZ7wXwLIA6EZ2hlLKVY6KWCgAzjwB42RYmSqmziOjvRFYzEq5Wq/3lctkOxElEtFEptS2p6lQAZlf+5dj24gLyfX8LEdkiaVwpdUuc/ML7qQAEQeDbOj+rYiSp03PlmfkqADuJ6Bel1FBSXYkB1Gq1sx3H+RbA71rr45IazEOemf8AcAyAC7TWXyWxkRhAGIb3GGOeB/Ce1vrGJMbykmXmHQDWALhPa/1cEjuJAQRB8JKI3GWMedjzvMeTGMtLtlarPeQ4zmP2kdl13dEkdhIDYOYPAVwjIqOu644lMZaXrO/7d9tDE3t4orVOtBCmAfAlgPMBrNNav5lXUEn0MvNaAPZRfL/ruhcl6ZsGgD3ArBhjrvM8z2bD/94aZ44f2GcSrfXJSRxaFEDjgeNmIrpsgUJL+KjDYQuc9atxhLZbRKaJ6PMF/r4P4FOt9YFmYJoCCILgVhF5ZymShyOApfwlos1Kqa2xhRAzrwPwelwadRoAG4+IXOq67r65sf0nA5h5L4BLjkQAAD7TWs+LrRkA+2Zm5REK4Fet9bzYmgGQuODt/U6cAtZvrfW8mAsAC0ebmYsMKKZACwSKNSCjNzMtsI4Vma0EYwWLRbDYBYptsKgDWiiEur4U7vqHIfuxw3jcltKJdUDj9dm8j62aHogws/0Kw17nLQaiwwAcKJVKGwYHB7+LPRCZK2ALDMdxVjeDYIzZk8UnKnGZ1sr9pfwUkV2e5+1fTE/iQ9FWHOokmQJAJ41WHr4WGZAH1U7SWWRAJ41WHr4WGZAH1U7SWWRAJ41WHr7+Ax+MbF8VcKgeAAAAAElFTkSuQmCC) no-repeat 0 8rpx/22rpx 20rpx;
+}
+
+.playlist-name {
+  font-size:26rpx;
+  line-height:1.2 ;
+  padding: 4rpx 0 0 12rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
