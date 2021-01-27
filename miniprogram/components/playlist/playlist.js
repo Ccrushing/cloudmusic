@@ -12,7 +12,7 @@ Component({
   observers:{
     ['playlist.playCount'](count) {
       this.setData({
-        _count:this._trabNumber(count,2)
+        _count:this._tranNumber(count,2)
       })
     }
   },
@@ -27,7 +27,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    _trabNumber(num,point) {
+    _tranNumber(num,point) {
       let numStr = num.toString().split('.')[0]
       if(numStr.length<6){
         return numStr
