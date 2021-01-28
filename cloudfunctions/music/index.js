@@ -29,5 +29,13 @@ exports.main = async (event, context) => {
     })  
   })
 
+  //歌单详情请求，传入歌单id，注意转成int类型
+  app.router('musiclist', async (ctx, next) => {
+    console.log('######' + event.playlistId)
+    const res = await axios.get(`${BASE_URL}/playlist/detail?id=${parseInt(event.
+      playlistId)}`)
+      console.log('######' + res)
+      ctx.body = res.data
+  })
   return app.serve()
 }

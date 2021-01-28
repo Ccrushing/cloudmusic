@@ -27,6 +27,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    //跳转到歌单详情页（歌曲页）
+    goToMusiclist() {
+      wx.navigateTo({
+        url: `../../pages/musiclist/musiclist?playlistId=${this.properties.playlist.id}`,
+      })
+    },
     _tranNumber(num,point) {
       let numStr = num.toString().split('.')[0]
       if(numStr.length<6){

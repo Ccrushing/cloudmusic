@@ -1,0 +1,47 @@
+/* pages/musiclist/musiclist.wxss */
+/* 顶部歌单信息容器，使用高斯模糊加上透明度 */
+.detail-container {
+  height: 320rpx;
+  filter:blur(40rpx);
+  opacity: 0.4;
+}
+
+/* 顶部歌单信息遮罩层，高度和背景图一致，z轴方向处于背景图下方，形成一种毛玻璃效果 */
+.detail-mask {
+  position: absolute;
+  width: 100%;
+  height: 320rpx;
+  background-color: #333;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* 详情信息容器，flex布局，绝对定位在吸顶位置，垂直方向（次轴）居中，水平方向（主轴）左对齐 */
+.detail-info {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 320rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+/* 左边的图片 */
+.detail-img {
+  width: 280rpx;
+  height: 280rpx;
+  margin-right: 24rpx;
+  border-radius: 6rpx;
+}
+
+/* 右边的文字 */
+.detail-name {
+  color: #FFFFFF;
+  font-size: 36rpx;
+  line-height: 1.5;
+  font-weight: 400;
+}
