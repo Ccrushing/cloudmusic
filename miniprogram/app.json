@@ -4,6 +4,7 @@
     "pages/find/find",
     "pages/profile/profile",
     "pages/musiclist/musiclist",
+    "pages/player/player",
     "pages/test/test"
   ],
   "requiredBackgroundModes": [

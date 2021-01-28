@@ -1,6 +1,7 @@
 <!--components/musiclist/musiclist.wxml-->
 <block wx:for="{{musiclist}}" wx:key="id">
-  <view class="musiclist-container">
+  <view class="musiclist-container {{item.id === playingId ? 'playing':''}}"
+   bind:tap="onSelect" data-musicid="{{item.id}}" data-index="{{index}}">
     <!-- 序号 -->
     <view class="musiclist-index">{{index+1}}</view>
     <!-- 歌曲信息容器 -->
