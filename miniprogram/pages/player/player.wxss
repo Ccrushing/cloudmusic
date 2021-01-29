@@ -1,1 +1,20 @@
 /* pages/player/player.wxss */
+.player-container {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  filter: blur(40rpx);
+  opacity: 0.5;
+  z-index: -1;
+}
+.player-mask {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+  background-color: #222;
+}
