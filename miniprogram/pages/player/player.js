@@ -2,6 +2,7 @@
 let musiclist = []
 //正在播放的歌曲index
 let playingIndex = 0
+const backgroundAudioManger = wx.getBackgroundAudioManager()
 Page({
 
   /**
@@ -23,13 +24,7 @@ Page({
     musiclist = wx.getStorageSync('musiclist')
     this._loadMusicDetail(options.musicId)
   },
-  togglePlaying(){
-    this.setData({
-      isPlaying: !this.data.isPlaying
-    })
- 
-  },
-
+  
   _loadMusicDetail(musicId){
    let music =  musiclist[playingIndex]
    console.log(music)
@@ -52,14 +47,50 @@ Page({
         wx.showToast({
           title:'没有权限播放'
         })
+        backgroundAudioManger.pause()
+        this.setData({
+          isPlaying:false
+        })
         return
       }
+
+      backgroundAudioManger.src = url
+      backgroundAudioManger.title = music.name
+      backgroundAudioManger.coverImgUrl = music.al.picUrl
+      backgroundAudioManger.singer = music.ar[0].name
+
       this.setData({
         isPlaying: true 
       })
+      wx.hideLoading()
     })
+  },
+  togglePlaying(){
+    if(this.data.isPlaying){
+      backgroundAudioManger.pause()
+    }else{
+      backgroundAudioManger.play()
+    }
+    this.setData({
+      isPlaying: !this.data.isPlaying
+    })
+  },
+  onPrew(){
+    playingIndex--
+    if(playingIndex === 0){
+      playingIndex = musiclist.length-1
+    }
+    this._loadMusicDetail(musiclist[playingIndex].id)
 
   },
+  onNext(){
+    playingIndex++
+    if(playingIndex === musiclist.length){
+      playingIndex = 0
+    }
+    this._loadMusicDetail(musiclist[playingIndex].id)
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

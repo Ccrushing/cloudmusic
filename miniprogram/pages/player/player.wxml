@@ -13,10 +13,10 @@
 
 <!-- 控制面板 -->
 <view class="control">
-  <text class="iconfont icon-hanhan-01-01"></text>
+  <text class="iconfont icon-hanhan-01-01" bind:tap="onPrew"></text>
   <text class="iconfont {{isPlaying?'icon-zanting':'icon-bofang'}}"
   bind:tap="togglePlaying" ></text>
-  <text class="iconfont icon-hanhan-01-011"></text>
+  <text class="iconfont icon-hanhan-01-011" bind:tap="onNext"></text>
   </view>
 
 </view>
