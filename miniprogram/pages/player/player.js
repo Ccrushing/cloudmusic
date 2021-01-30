@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pciUrl:''
+    picUrl:'',
+    isPlaying: false
 
   },
 
@@ -21,6 +22,12 @@ Page({
     playingIndex = options.index
     musiclist = wx.getStorageSync('musiclist')
     this._loadMusicDetail(options.musicId)
+  },
+  togglePlaying(){
+    this.setData({
+      isPlaying: !this.data.isPlaying
+    })
+ 
   },
 
   _loadMusicDetail(musicId){
@@ -40,6 +47,16 @@ Page({
       }
     }). then((res) => {
       console.log(res)
+      const url = res.result.data[0].url
+      if(url == null){
+        wx.showToast({
+          title:'没有权限播放'
+        })
+        return
+      }
+      this.setData({
+        isPlaying: true 
+      })
     })
 
   },

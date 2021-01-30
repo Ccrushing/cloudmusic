@@ -47,6 +47,11 @@
   background: url('https://crushing.oss-cn-hangzhou.aliyuncs.com/3.png') no-repeat center/contain;
   transform: rotate(-15deg);
   transform-origin:24rpx 10rpx ;
+  transition: transfrom 0.8s ease;
+}
+
+.playing.player-disc::after{
+  transform: rotate(0deg);
 }
 
 .player-img {
@@ -58,6 +63,22 @@
   top: 50%;
   margin-top: -184rpx;
   margin-left: -184rpx;
+}
+
+.zhuan {
+  animation: disc 12s linear infinite;
+}
+@keyframes disc{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ting {
+  animation-play-state:paused ;
 }
 
 .control {

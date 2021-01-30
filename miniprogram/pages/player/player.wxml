@@ -6,14 +6,16 @@
 
 <view class="player-info">
   <!-- 封面信息 -->
-  <view class="player-disc">
-     <image class="player-img" src="{{picUrl}}"></image>
+  <view class="player-disc {{isPlaying?'playing':''}}">
+     <image class="player-img zhuan {{isPlaying?'':'ting'}} " 
+     src="{{picUrl}}"></image>
   </view>
 
 <!-- 控制面板 -->
 <view class="control">
   <text class="iconfont icon-hanhan-01-01"></text>
-  <text class="iconfont icon-bofang"></text>
+  <text class="iconfont {{isPlaying?'icon-zanting':'icon-bofang'}}"
+  bind:tap="togglePlaying" ></text>
   <text class="iconfont icon-hanhan-01-011"></text>
   </view>
 
