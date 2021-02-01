@@ -12,3 +12,7 @@
 
 <!-- 使用歌曲列表组件 -->
 <xu-musiclist musiclist = "{{musiclist}}"></xu-musiclist>
+<xu-musiclist musiclist = "{{musiclist}}"></xu-musiclist>
+<xu-musiclist musiclist = "{{musiclist}}"></xu-musiclist>
+
+

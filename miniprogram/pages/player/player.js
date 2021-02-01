@@ -4,16 +4,13 @@ let musiclist = []
 let playingIndex = 0
 const backgroundAudioManger = wx.getBackgroundAudioManager()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     picUrl:'',
     isPlaying: false
-
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -24,7 +21,6 @@ Page({
     musiclist = wx.getStorageSync('musiclist')
     this._loadMusicDetail(options.musicId)
   },
-  
   _loadMusicDetail(musicId){
    let music =  musiclist[playingIndex]
    console.log(music)
@@ -53,12 +49,10 @@ Page({
         })
         return
       }
-
       backgroundAudioManger.src = url
       backgroundAudioManger.title = music.name
       backgroundAudioManger.coverImgUrl = music.al.picUrl
       backgroundAudioManger.singer = music.ar[0].name
-
       this.setData({
         isPlaying: true 
       })
@@ -77,11 +71,10 @@ Page({
   },
   onPrew(){
     playingIndex--
-    if(playingIndex === 0){
+    if(playingIndex < 0){
       playingIndex = musiclist.length-1
     }
     this._loadMusicDetail(musiclist[playingIndex].id)
-
   },
   onNext(){
     playingIndex++
@@ -90,8 +83,6 @@ Page({
     }
     this._loadMusicDetail(musiclist[playingIndex].id)
   },
-
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

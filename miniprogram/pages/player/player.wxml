@@ -11,6 +11,11 @@
      src="{{picUrl}}"></image>
   </view>
 
+  <!-- 进度条 -->
+<view class="progress-bar">
+   <xu-progress-bar/>
+</view>
+
 <!-- 控制面板 -->
 <view class="control">
   <text class="iconfont icon-hanhan-01-01" bind:tap="onPrew"></text>
@@ -18,5 +23,5 @@
   bind:tap="togglePlaying" ></text>
   <text class="iconfont icon-hanhan-01-011" bind:tap="onNext"></text>
   </view>
-
 </view>
+
