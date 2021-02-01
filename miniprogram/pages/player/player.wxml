@@ -13,7 +13,7 @@
 
   <!-- 进度条 -->
 <view class="progress-bar">
-   <xu-progress-bar/>
+   <xu-progress-bar bind:musicEnd="onNext"/>
 </view>
 
 <!-- 控制面板 -->

@@ -39,7 +39,7 @@ Page({
     }). then((res) => {
       console.log(res)
       const url = res.result.data[0].url
-      if(url == null){
+      if(url === null){
         wx.showToast({
           title:'没有权限播放'
         })
