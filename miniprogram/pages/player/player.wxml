@@ -6,14 +6,17 @@
 
 <view class="player-info">
   <!-- 封面信息 -->
-  <view class="player-disc {{isPlaying?'playing':''}}">
+  <view class="player-disc {{isPlaying?'playing':''}}" hidden="{{isLyricShow}}" bind:tap="onLyricShow">
      <image class="player-img zhuan {{isPlaying?'':'ting'}} " 
      src="{{picUrl}}"></image>
   </view>
 
+  <!-- 歌词 -->
+  <xu-lyric class="lyric" isLyricShow="{{isLyricShow}}" lyric="{{lyric}}" bind:tap="onLyricShow"></xu-lyric>
+
   <!-- 进度条 -->
 <view class="progress-bar">
-   <xu-progress-bar bind:musicEnd="onNext"/>
+   <xu-progress-bar bind:musicEnd="onNext" bind:timeUpdate="timeUpdate"/>
 </view>
 
 <!-- 控制面板 -->
@@ -24,4 +27,5 @@
   <text class="iconfont icon-hanhan-01-011" bind:tap="onNext"></text>
   </view>
 </view>
+
 
