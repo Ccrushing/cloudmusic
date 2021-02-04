@@ -1,47 +1,177 @@
-/* pages/musiclist/musiclist.wxss */
-/* 顶部歌单信息容器，使用高斯模糊加上透明度 */
-.detail-container {
-  height: 320rpx;
-  filter:blur(40rpx);
+/* 顶部导航，随着滚动出现 */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  padding-bottom: 10rpx;
+}
+/* 默认的标题菜单 */
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100rpx;
+  font-size: 18px;
+  color: #fff;
+  z-index: 1003;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* 返回箭头 */
+.icon-back {
+  position: absolute;
+  left: 20rpx;
+  top: 96rpx;
+  font-size: 32px;
+  color: #fff;
+  z-index: 1003;
+}
+/* 以下三个元素分三层，实现歌单信息的毛玻璃效果 */
+/* 1-图片背景模糊 */
+.blur-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(40rpx);
   opacity: 0.4;
 }
-
-/* 顶部歌单信息遮罩层，高度和背景图一致，z轴方向处于背景图下方，形成一种毛玻璃效果 */
-.detail-mask {
+/* 2-遮罩层 */
+.mask {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 320rpx;
+  height: 100%;
   background-color: #333;
-  top: 0;
-  left: 0;
-  z-index: -1;
 }
-
-/* 详情信息容器，flex布局，绝对定位在吸顶位置，垂直方向（次轴）居中，水平方向（主轴）左对齐 */
-.detail-info {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
+/* 3-最上层的内容，一定要相对定位不脱离文档流 */
+.info-container {
   width: 100%;
-  height: 320rpx;
-  padding: 20rpx;
+  height: 380rpx;
+  position: relative;
+  background-color: #ccc;
+}
+/* 歌单详情信息容器，可以用父相子绝轻+flex来巧布局 */
+.detail-info {
+  position: relative;
+  width: 100%;
+  height: 380rpx;
+  display: flex;
+  justify-content: center;
   box-sizing: border-box;
-  align-items: center;
+  padding-top: 60rpx;
 }
-
-/* 左边的图片 */
+/* 左边歌单图片 */
+.detail-info .left {
+  flex: 1 1 30%;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+/* 歌单封面图 */
 .detail-img {
-  width: 280rpx;
-  height: 280rpx;
-  margin-right: 24rpx;
-  border-radius: 6rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10px;
 }
-
-/* 右边的文字 */
+/* 右边歌单信息 */
+.detail-info .right {
+  flex: 1 1 70%;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+/* 歌单名 */
 .detail-name {
   color: #FFFFFF;
-  font-size: 36rpx;
+  font-size: 32rpx;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 300;
+  margin-bottom: 20rpx;
+}
+/* 歌单创建者信息：头像、昵称等，flex布局横向 */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.user-info image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 10rpx; 
+}
+.user-info text {
+  font-size: 26rpx;
+  color: #ccc;
+}
+/* 歌单描述 */
+.description {
+  font-size: 13px;
+  font-weight: 300;
+  color: #f6f6f6;
+}
+/* 分享评论等操作区，父相子绝定位，自身flex布局，主轴均分，侧轴居中 */
+.control {
+  position: absolute;
+  bottom: -20px;
+  width: 70%;
+  height: 90rpx;
+  border-radius: 50rpx;
+  background-color: #fff;
+  display: flex;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  justify-content: space-around;
+  align-items: center;
+}
+/* 分三组布局 */
+.control view {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  flex: 1 1 33%;
+  display: flex;
+  justify-content: space-around;
+  color: #333;
+  font-size: 28rpx;
+}
+/* 伪类，对第一个view使用特殊样式 */
+.control view:first-child {
+  color: #949494;
+}
+/* 对具有last样式对view使用特殊样式 */
+.control view:not(.last) {
+  border-right: 1px solid #ccc;
+}
+.control view text .iconfont {
+  margin-right: 10rpx;
+}
+/* 歌单列表滚动容器，注意这里box-sizing的用法 */
+.content {
+  width: 100%;
+  margin-top: 60rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+/* 文本省略为一行显示，复用 */
+.ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* 底部 */
+.bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120rpx;
+  background-color: #f8f8f8;
 }

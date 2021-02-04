@@ -1,15 +1,32 @@
 <!--pages/music/music.wxml-->
-<swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" 
- interval="3000" duration="1000" 
-  class="swiper">
-  <swiper-item wx:for="{{imgUrls}}" wx:key="id">
-    <image src="{{item.url}}" class="img" mode="scaleToFil"></image>
-  </swiper-item>
-</swiper>
+<!-- 自定义导航栏组件 -->
+<!-- 默认导航 -->
+<view class='nav' style='padding-top:{{ statusBarHeight + 44}}px;opacity:{{1-opacity}};'>
+    <input type="text" class="search-input" placeholder="{{placeholder}}"/>     
+  </view>
+  <!-- 切换导航 -->
+  <view class='nav' style='padding-top:{{ statusBarHeight + 44}}px;opacity:{{opacity}};'>
+    <text class="nav-title">略略略</text>
+  </view>
 
-<text class="title">场景歌单</text>
-<view class="playlist-container">
-  <block wx:for="{{playlist}}" wx:key="_id">
-    <x-playlist playlist="{{item}}"></x-playlist>
+
+ <!-- 滚动区域 -->
+ <scroll-view scroll-y style="padding-top:{{ statusBarHeight + 54}}px">
+    <!-- 轮播 -->
+  <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="3000" duration="1000"
+    class="swiper" style="margin-top:{{ BarHeight + 44+8}}px">
+    <block wx:for="{{imgUrls}}" wx:key="url">
+    <swiper-item>  
+      <image src="{{item.url}}" class="img" mode="scaleToFill"></image>
+    </swiper-item>
   </block>
-</view>
+  </swiper>
+
+  <text class="title">场景歌单</text>
+  <view class="playlist-container">
+    <block wx:for="{{playlist}}" wx:key="id">
+      <x-playlist playlist="{{item}}"></x-playlist>
+    </block>
+  </view>
+</scroll-view>
+

@@ -19,9 +19,10 @@ button::after{
   border: none;
 }
 
-
 page {
-  background: #f6f6f6;
+  background: -webkit-linear-gradient(top,#fdd6ee,#ffc3ca
+  ,rgb(228, 148, 212));
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -155,3 +156,23 @@ page {
   line-height: 36rpx;
   word-break: break-all;
 }
+/* 
+.custom{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 45px;
+  background:#2c5cfe;
+  z-index: 999;
+}
+.custom text {
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 500;
+  max-width: 280rpx;
+}
+.empty_custom{
+  height: 45px;
+  width:100%
+} */
