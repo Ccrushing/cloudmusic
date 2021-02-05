@@ -1,2 +1,1 @@
-<!--pages/profile/profile.wxml-->
-<text>Hello!</text>
+<navigation showIcon='{{false}}' title='我的'  isTransparent="{{true}}"></navigation>

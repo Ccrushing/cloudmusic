@@ -1,6 +1,15 @@
 page{
   background-color: #f8f8f8;
 }
+.header {
+  position: fixed;
+  top: -150rpx;
+  width: 100%;
+  z-index: 999;
+  padding-bottom: 10rpx;
+  background: -webkit-linear-gradient(to bottom,#d9a7c7 0%, #fffdcd 100%);
+  background: linear-gradient(to bottom,#d9a7c7 0%, #fffdcd 100%);
+}
 .nav{
   width: 100%;
   position: fixed;
@@ -27,16 +36,26 @@ page{
   bottom: 6px;
   left: 300rpx;
   text-align: center;
+  color: rgb(36, 30, 30);
+}
+.icon-sousuo {
+  position: absolute;
+  left: 70rpx;
+  bottom: 6px;
+  font-size: 25px;
+  color: #000000c0;
 }
 
 .swiper {
+  position: relative;
+  margin-bottom: 0rpx;
   height: 340rpx;
 }
 .img {
-  margin-left: 50rpx;
-  width: 85%;
-  height: 85%;
-  border-radius: 15rpx;
+  width: 95%;
+  height: 95%;
+  margin-left: 15rpx;
+  border-radius: 10rpx;
 }
 .title {
   margin-top: 10rpx;
@@ -49,4 +68,8 @@ page{
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 10rpx;
+}
+.scroll-x{
+  white-space: nowrap;
+  display: flex;
 }

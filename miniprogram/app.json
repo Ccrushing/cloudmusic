@@ -5,16 +5,15 @@
     "pages/profile/profile",
     "pages/musiclist/musiclist",
     "pages/player/player",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/publish/publish"
   ],
   "requiredBackgroundModes": [
     "audio"
   ],
-  "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
+  "window": { 
     "navigationBarBackgroundColor": "#d43c33",
-    "navigationBarTitleText": "云音乐",
+    "navigationBarTitleText": "Crush",
     "navigationBarTextStyle": "white",
     "navigationStyle": "custom"
 
@@ -45,6 +44,9 @@
 
     ]
 
+  },
+  "usingComponents": {
+    "navigation": "/components/navigation/navigation"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

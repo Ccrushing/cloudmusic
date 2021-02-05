@@ -1,1 +1,3 @@
-/* pages/profile/profile.wxss */
+page{
+  background-color: rgb(185,140,140);
+}

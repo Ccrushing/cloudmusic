@@ -1,1 +1,17 @@
-/* pages/find/find.wxss */
+.header{
+  display: flex;
+  height: 70rpx;
+  line-height: 60rpx;
+  padding: 10rpx 0;
+  background-color: #ffffff;
+}
+.icon-release {
+  position: relative;
+  top: 6rpx;
+  bottom: 6px;
+  font-size: 30px;
+  color: #000000c0;
+}
+.right {
+  margin-top: 6rpx;
+}

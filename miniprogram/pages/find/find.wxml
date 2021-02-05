@@ -1,8 +1,13 @@
-<!--pages/find/find.wxml-->
-<text>发现新音乐</text>
-<view>
-  <block wx:for="{{cards}}">
-    <my-card></my-card>
-  </block>
+<!-- 自定义导航 -->
+<navigation showIcon='{{false}}' isTransparent='{{true}}' title='发现'></navigation>
+<!-- 顶部搜索区 -->
+<view class="header">
+  <view class="left" bind:tap="onPublish">
+    <!-- 左侧的发布图标 -->
+    <i class="iconfont icon-release"></i>
+  </view>
+  <view class="right">
+    <!-- 引入搜索组件，接受子组件回转的search方法 -->
+    <xu-search bind:search="onSearch"></xu-search>
+  </view>
 </view>
-

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "x-playlist":"/components/playlist/playlist"
+    "x-playlist":"/components/playlist/playlist",
+    "xu-search": "/components/playlist/playlist"
   },
   "navigationBarTitleText": "音乐",
   "enablePullDownRefresh": true

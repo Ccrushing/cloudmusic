@@ -1,13 +1,30 @@
 <!--pages/music/music.wxml-->
 <!-- 自定义导航栏组件 -->
+<!-- <view class="header" style="opacity:{{1-opacity}}; padding-top: {{40 + 44}}px"> -->
+  <!-- <navigation showIcon='{{false}}' title='首页'></navigation> -->
+  <view class="header">
+  <view style="padding-top:{{statusBarHeight + 44}}px;opacity:{{1-opacity}};">
+    <input type="text" class="search-input" placeholder="{{placeholder}}" />
+    <text class="iconfont icon-sousuo"></text>
+  </view>  
+  <view style="padding-top:{{statusBarHeight + 5}}px;opacity:{{opacity}};">
+    <text class="nav-title">首页</text>  
+  </view>
+</view>
+
 <!-- 默认导航 -->
 <view class='nav' style='padding-top:{{ statusBarHeight + 44}}px;opacity:{{1-opacity}};'>
-    <input type="text" class="search-input" placeholder="{{placeholder}}"/>     
+    <input type="text" class="search-input" placeholder="{{placeholder}}"/>  
+    <text class="iconfont icon-sousuo"></text>   
   </view>
   <!-- 切换导航 -->
   <view class='nav' style='padding-top:{{ statusBarHeight + 44}}px;opacity:{{opacity}};'>
     <text class="nav-title">略略略</text>
   </view>
+  <!-- 粘性吸顶，引入搜索组件 -->
+<!-- <view class="search-container" style="top:{{statusBarHeight + 44}}px;">
+  <x-search iconfont="iconfont" icon-sousuo="icon-sousuo" bind:search="onSearch" />
+</view> -->
 
 
  <!-- 滚动区域 -->
@@ -21,10 +38,10 @@
     </swiper-item>
   </block>
   </swiper>
-
-  <text class="title">场景歌单</text>
+<!-- 歌单列表 -->
   <view class="playlist-container">
     <block wx:for="{{playlist}}" wx:key="id">
+        <!-- item数据会传入playlist组件中 -->
       <x-playlist playlist="{{item}}"></x-playlist>
     </block>
   </view>
