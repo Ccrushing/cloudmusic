@@ -1,2 +1,1 @@
-
-<navigation  isTransparent='{{true}}' title='发布'></navigation>
+<navigation showIcon='{{false}}' title='发布'  isTransparent="{{true}}"></navigation>

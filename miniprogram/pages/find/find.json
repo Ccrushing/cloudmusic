@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-  "xu-search": "/components/search/search"
+  "xu-search": "/components/search/search",
+  "crush-login":"/components/login/login"
   }
 }

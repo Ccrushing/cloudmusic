@@ -11,3 +11,10 @@
     <xu-search bind:search="onSearch"></xu-search>
   </view>
 </view>
+
+<scroll-view class="container" scroll-y>
+  <!-- 底部弹出层 -->
+  <crush-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
+  bind:loginfail="onLoginFail">
+  </crush-login>
+</scroll-view>

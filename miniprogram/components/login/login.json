@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+  "crush-bottom-modal":"/components/bottom-modal/bottom-modal"
+  }
+}

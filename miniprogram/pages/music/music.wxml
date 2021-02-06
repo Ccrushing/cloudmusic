@@ -8,7 +8,7 @@
     <text class="iconfont icon-sousuo"></text>
   </view>  
   <view style="padding-top:{{statusBarHeight + 5}}px;opacity:{{opacity}};">
-    <text class="nav-title">首页</text>  
+    <text class="nav-title"></text>  
   </view>
 </view>
 

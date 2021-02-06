@@ -1,5 +1,5 @@
 <view class="container">
-    <input class="input" placeholder="{{placeholder}}" value='{{inputValue}}' bindinput="onInput" bindfocus="onFocus"></input>
-    <button class="search-btn" bind:tap="onSearch">搜索</button>
-  </view>
-  
+  <input class="input" placeholder="{{placeholder}}"
+  value='{{inputValue}}' bindinput="onInput" bindfocus="onFocus"></input>
+  <button class="search-btn" bind:tap="Onsearch">搜索</button>
+</view>

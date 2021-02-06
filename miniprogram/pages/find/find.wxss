@@ -3,7 +3,7 @@
   height: 70rpx;
   line-height: 60rpx;
   padding: 10rpx 0;
-  background-color: #ffffff;
+  background-color: #f3e7d1;
 }
 .icon-release {
   position: relative;
@@ -14,4 +14,9 @@
 }
 .right {
   margin-top: 6rpx;
+}
+.container {
+  margin-top: 10rpx;
+  box-sizing: border-box;
+  height: 100vh;
 }
