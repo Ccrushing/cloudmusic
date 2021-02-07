@@ -15,7 +15,8 @@
   left: 0;
   width: 100%;
   min-height: 300rpx;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-color: #f8f8f8;
 }
 
@@ -25,3 +26,4 @@
   top: 10rpx;
   padding: 20rpx;
 }
+/*# sourceMappingURL=bottom-modal.css.map */

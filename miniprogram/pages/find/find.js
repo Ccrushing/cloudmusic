@@ -31,11 +31,11 @@ Page({
     })
   },
   onLoginSuccess(event){
-    console.log('>>>>>>' + event)
+    // console.log('>>>>>>' + event)
     const detail = event.detail
-    console.log(detail.nickName)
+    // console.log(detail.nickName)
     wx.navigateTo({
-      url: '../publish/publish',
+      url: `../publish/publish?nickName=${detail.nickName}&avatarUrl=${detail.avatarUrl}`,
     })
 
   },

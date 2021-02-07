@@ -1,18 +1,19 @@
-<!-- 引入渐变的微信脚本代码 -->
-<wxs src="navigation.wxs" module="nav"></wxs>
+<!--components/navigation/navigation.wxml-->
+<wxs src="navigation.wxs" module="nav">
+</wxs>
+
 <!-- 留出顶部状态栏高度 -->
-<view style="padding-top:{{contentOffset ? statusBarHeight + 44 : 0}}px;">
-  <view class='navigation status-bar'>
-    <!--返回按钮，用hidden属性来控制显示与否 -->
-    <view class='goBack' bindtap='goBack' style="padding-top:{{statusBarHeight}}px;"
-      hidden='{{!showIcon}}'>
-      <image src='back.png'></image>
+<view style="padding-top: {{contentOffset ? statusBarHeight + 44 : 0}}px">
+  <view class="navigation status-bar">
+    <!-- 返回按钮，用hidden属性控制显示与否 -->
+    <view class="goBack" bindtap='goBack' style="padding-top:{{statusBarHeight}}px" hidden="{{!showIcon}}">
+      <image src="back.png"></image>
     </view>
-    <!-- 根据是否启用透明样式来决定是否追加tabbar2样式（透明），并将导航设置为能指定方向的渐变色 -->
-    <view class="tabar {{isTransparent ? 'tabar2':''}}"
-      style="padding-top:{{statusBarHeight}}px; background-color:{{backgroundColor}}; {{nav.linearGradient(linearGradient,direction,colors)}}">
-      <!-- 标题 -->
-      <text style="color:{{titleColor}};">{{title}}</text>
+    <!-- 根据是否启用透明样式来决定是否追加tabbar2样式（透明），并将导航设置为指定方向的渐变色 -->
+    <view class="tabar {{isTransparent ? 'tabar2':''}}" 
+    style="padding-top:{{statusBarHeight}}px; background-color:{{backgroundColor}}; {{nav.linearGradient(linearGradient,direction,colors)}}">
+ <!-- 标题 -->
+ <text style="color:{{titleColor}};">{{title}}</text>
     </view>
   </view>
 </view>

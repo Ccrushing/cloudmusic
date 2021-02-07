@@ -1,1 +1,25 @@
-<navigation showIcon='{{false}}' title='发布'  isTransparent="{{true}}"></navigation>
+<navigation title='发布' colors="{{['#5B4B74','#b488b9']}}" direction="top"></navigation>
+
+<view class="container">
+  <textarea class="content" placeholder="分享新鲜事..." bindinput="onInput" maxlength="140" auto-focus bindfocus="onFocus"
+    bindblur="onBlur"></textarea>
+  <view class="image-list">
+    <!-- 显示图片，可以预览和删除 -->
+    <block wx:for="{{images}}" wx:key="*this">
+      <view class="image-wrap">
+        <image class="image" src="{{item}}" mode="aspectFill" bind:tap="onPreviewImage" data-imgsrc="{{item}}"></image>
+        <i class="iconfont icon-shanchu" bind:tap="onDelImage" data-index="{{index}}"></i>
+      </view>
+    </block>
+
+    <!-- +号选择图片的容器 -->
+    <view class="image-wrap selectphoto" hidden="{{!selectPhoto}}" bind:tap="onChooseImage">
+      <i class="iconfont icon-zengjia"></i>
+    </view>
+  </view>
+</view>
+
+<view class="footer" style="bottom:{{footerBottom}}rpx">
+  <text class="words-num">{{wordsNum}}</text>
+  <button class="send-btn">发布</button>
+</view>
