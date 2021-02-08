@@ -1,0 +1,76 @@
+/* components/blog-card/blog-card.wxss */
+page {
+  background-color: #ededed;
+}
+
+.blog {
+  width: 100%;
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.blog-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.blog-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.blog-box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.blog-nickName {
+  font-size: 32rpx;
+  color: #4B4B4B;
+}
+
+.blog-time {
+  font-size: 24rpx;
+  color: #939393;
+}
+
+.blog-content {
+  margin: 20rpx 0;
+  color: #4B4B4B;
+  font-size: 32rpx;
+  font-size: 400;
+  line-height: 1.5;
+}
+
+.image-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+
+.image-list .image-wrap {
+  width: 230rpx;
+  height: 230rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.image-list .image-wrap .image {
+  width: 100%;
+  height: 100%;
+}
+
+.image-list .image-wrap .img:nth-child(3n) {
+  margin-right: 0;
+}
+/*# sourceMappingURL=blog-card.css.map */

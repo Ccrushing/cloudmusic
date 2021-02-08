@@ -2,6 +2,8 @@
 const MAX_WORDS_NUM = 140
 //最大上传图片数量
 const MAX_IMG_NUM = 9
+//引入云数据库
+const db = wx.cloud.database()
 //输入的文字内容
 let content = ''
 //用户信息
@@ -91,6 +93,94 @@ Page({
         selectPhoto:true,
       })
     }
+  },
+  send() {
+    //发布流程
+    //图片 -> 云储存 fileID 云文件ID
+    //数据 -> 云数据库
+    //数据库包括：内容、图片fileID、openid、昵称、头像、时间
+    //openid从小程序端操作云数据库可以自动获得，时间可以获得数据库服务器时间
+
+    //1.对输入的文字内容做判空操作，（没输或者输入的都是空格），所以先trim一下
+    if(content.trim() === '') {
+      wx.showModal({
+        title: '请输入内容',
+        content: '',
+      })
+      return
+    }
+    //2.加载动画
+    wx.showLoading({
+      title: '发布中',
+      mask: true,
+    })
+
+    //3.上传文件
+    let promiseArr = [] //promise数组
+    let fileIds = []  //返回的文件id数组
+    //循环遍历图片数组，上传（云存储的API只能上传单个文件）
+    for(let i = 0, len = this.data.images.length; i < len; i++) {
+      //每次上传操作都要创建一个异步对象，resolve为成功，reject为失败
+      let p = new Promise((resolve,reject) => {
+        //从数组中取出当前需要上传的文件
+        let item = this.data.images[i]
+        //正则表达式，取出文件扩展名，你也可以用其他方法，这里只是为了强化正则
+        let suffix = /\.\w+$/.exec(item)[0]
+        console.log(suffix)
+        //调用云开发的文件上传API，需要传：云端文件存储路径（这里在云存储创建blog目录，将图片都上传到该目录），以及本地文件路径
+        //为了避免重复的文件名覆盖前面文件，这里对文件的文件名做了时间戳和随机数的拼接，扩展名保留原扩展名
+        wx.cloud.uploadFile({
+          cloudPath: 'blog/' + Date.now() + '-' + Math.random() * 1000000 + suffix,
+          filePath: item,
+          success: (res) => {
+            //上传成功的回调，拿到上传后的文件ID
+            console.log(res.fileID)
+            //追加到文件id数组里
+            fileIds = fileIds.concat(res.fileID)
+            //继续下一个异步任务
+            resolve()
+          },
+          //失败的处理
+          fail: (err) => {
+            console.error(err)
+            reject()
+          }
+        })
+      })
+      //将异步任务推入异步任务数组
+      promiseArr.push(p)
+    }
+
+    //存入到云数据库
+    //promise.all的resolve回调执行是在所有输入的promise的resolve回调都结束
+    Promise.all(promiseArr).then((res) => {
+      //操作云数据库的blog集合，执行新增操作
+      db.collection('blog').add({
+        data: {
+          ...userInfo, //使用延展操作符... 取得userInfo对象的所有属性（昵称、头像）
+          content, //文字内容
+          imgs: fileIds, //文字id处理
+          createTime: db.serverDate(),
+        }
+      }).then((res) => {
+        console.log(res) 
+        wx.hideLoading()
+        wx.showToast({
+          title: '发布成功',
+        })
+        //返回blog页面，并且刷新
+        wx.navigateBack()
+        const pages = getCurrentPages()
+        //取到上一个页面
+        const prevPage = pages[pages.length - 2]
+        prevPage.onPullDownRefresh()
+      })
+    }).catch((err) => {
+      wx.hideLoading()
+      wx.showToast({
+        title: '发布失败',
+      })
+    })
   },
 
 

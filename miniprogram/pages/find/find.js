@@ -1,11 +1,36 @@
 let keyword = '' //搜索关键字
 Page({
-  data: {},
+  data: {
+    modalShow: false,
+    blogList: [],
+  },
   onSearch(event) {
     keyword =event.detail.keyword
     console.log(keyword)
   },
-  onLoad: function (options) {},
+  onLoad(options) {
+    this._loadBlogList()
+  },
+  _loadBlogList(start = 0) {
+    wx.showLoading({
+      title: '数据加载中',
+    })
+    wx.cloud.callFunction({
+      name: 'blog',
+      data: {
+        start,
+        count: 10,
+        $url: 'list',
+      }
+    }).then((res) => {
+      console.log(res)
+      this.setData({
+        blogList: this.data.blogList.concat(res.result)
+      })
+      wx.hideLoading()
+      wx.stopPullDownRefresh()
+    })
+  },
   onPublish() {
     
     //获取用户的当前设置，返回值中只会出现小程序已经向用户请求过的权限，
@@ -78,7 +103,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      blogList: []
+    })
+    this._loadBlogList(0)
   },
 
   /**

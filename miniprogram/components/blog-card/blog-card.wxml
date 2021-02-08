@@ -1,0 +1,32 @@
+<!--components/blog-card/blog-card.wxml-->
+<view class="blog">
+  <!-- 博客头部，水平flex，左边头像，右边昵称和时间 -->
+  <view class="blog-header">
+    <!-- 头像 -->
+    <image class="blog-avatar" src="{{blog.avatarUrl}}"></image>
+    <!-- 昵称，头像容器，垂直flex -->
+    <view class="blog-box">
+      <view class="blog-nickName">{{blog.nickName}}</view>
+      <view class="blog-time">{{_createTime}}</view>
+    </view>
+  </view>
+
+  <!-- 博客文字内容 -->
+  <view class="blog-content">
+    <text>{{blog.content}}</text>
+  </view>
+  <!-- 博客图片，注意catch和bind的区别 -->
+  <view class="image-list">
+    <block wx:for="{{blog.imgs}}" wx:key="index">
+      <view class="image-wrap">
+      <image
+          class="image"
+          src="{{item}}"
+          mode="aspectFill"
+          catch:tap="onPreviewImage"
+          data-imgsrc="{{item}}"
+          data-imgs="{{blog.imgs}}"></image>
+        </view>
+    </block>
+  </view>
+</view>

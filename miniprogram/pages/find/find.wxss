@@ -12,11 +12,13 @@
   font-size: 30px;
   color: #000000c0;
 }
+.publish-container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20rpx;
+  margin-top: 80rpx;
+}
+
 .right {
   margin-top: 6rpx;
-}
-.container {
-  margin-top: 10rpx;
-  box-sizing: border-box;
-  height: 100vh;
 }

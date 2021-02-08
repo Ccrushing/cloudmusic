@@ -11,7 +11,14 @@
     <xu-search bind:search="onSearch"></xu-search>
   </view>
 </view>
-
+<!-- 博客卡片列表 -->
+<view class="publish-container">
+  <block wx:for="{{blogList}}" wx:key="_id">
+    <view class="blog-panel">
+      <crush-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goComment"></crush-blog-card>
+    </view>
+  </block>
+</view>
 <scroll-view class="container" scroll-y>
   <!-- 底部弹出层 -->
   <crush-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
