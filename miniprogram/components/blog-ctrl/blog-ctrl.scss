@@ -1,0 +1,58 @@
+@import "..\\..\\global.scss";
+
+.ctrl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $lighterBgColor;
+
+    .ctrl-item {
+        flex: 1;
+        height: 68rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.iconfont {
+    margin-right: $gap;
+    margin-right: $gap;
+    font-size: $primarySize;
+}
+
+.item {
+    color: $lightFontColor;
+    font-size: $primarySize;
+    font-weight: 400;
+}
+
+.share-btn {
+    background-color:$lighterBgColor;
+    color: $lightFontColor;
+    border: none;
+    display: flex;
+    justify-content: center;
+    border-left: 1px solid #ccc;
+}
+
+.comment-content {
+    width: 560rpx;
+    text-align:left;
+    padding: 20rpx;
+    font-size: 32rpx;
+}
+
+.send {
+    display: block;
+    width: 180rpx;
+    height: $primarySize*2;
+    line-height: $primarySize*2;
+    background: lightblue;
+    color: $darkFontColor;
+    font-size: $primarySize;
+    border-radius: $gap/2;
+    position: absolute;
+    right: $gap;
+    bottom: $gap;
+}

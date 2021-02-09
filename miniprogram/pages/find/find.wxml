@@ -21,7 +21,8 @@
 </view>
 <scroll-view class="container" scroll-y>
   <!-- 底部弹出层 -->
-  <crush-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
-  bind:loginfail="onLoginFail">
-  </crush-login>
+  <!-- 发布使用授权登录组件 -->
+  <crush-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"> </crush-login>
+  <!-- 评论使用授权登录组件 -->
+  <crush-login modalShow="{{loginShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"> </crush-login>
 </scroll-view>

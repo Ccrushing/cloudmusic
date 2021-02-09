@@ -1,0 +1,32 @@
+<view class="ctrl">
+  <!-- 评论图标和文字 -->
+  <view class="ctrl-item" bind:tap="onComment">
+    <i class="iconfont icon-pinglun"></i>
+    <text class="item">评论</text>
+  </view>
+  <!-- 分享图标和文字 -->
+  <view class="ctrl-item">
+    <button open-type="share" data-blogid="{{blogId}}" data-blog="{{blog}}" class="share-btn">
+      <i class="iconfont icon-fenxiang"></i>
+      <text class="item">分享</text>
+    </button>
+  </view>
+</view>
+<!-- 使用授权登录组件 -->
+<crush-login modalShow="{{loginShow}}" bind:loginsuccess="onLoginsuccess" bind:loginfail="onLoginfail">
+</crush-login>
+<!-- 使用底部弹框组件，向插槽传评论的元素 -->
+<crush-bottom-modal modalShow="{{modalShow}}">
+  <view slot="modal-content">
+    <!-- 给具名插槽传内容为textarea和button（评论功能所需） -->
+    <textarea
+      bindinput="onInput"
+      name="content"
+      class="comment-content"
+      placeholder="写评论"
+      value="{{content}}"
+      fixed="true"
+    ></textarea>
+    <view class="send" bind:tap="onSend">发送</view>
+  </view>
+</crush-bottom-modal>

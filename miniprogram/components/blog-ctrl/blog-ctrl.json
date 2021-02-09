@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "crush-login":"/components/login/login",
+    "crush-bottom-modal":"/components/bottom-modal/bottom-modal"
+  }
+}

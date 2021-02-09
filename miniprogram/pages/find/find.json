@@ -3,6 +3,7 @@
   "xu-search": "/components/search/search",
   "crush-login":"/components/login/login",
   "crush-blog-card":"/components/blog-card/blog-card"
+ 
   },
   "enablePullDownRefresh": true
 }

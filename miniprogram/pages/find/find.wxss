@@ -1,3 +1,4 @@
+
 .header{
   display: flex;
   height: 70rpx;
@@ -16,9 +17,23 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 20rpx;
-  margin-top: 80rpx;
+  margin-top: 40rpx;
 }
-
+.left {
+  width:64rpx ;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .right {
+  flex: 1;
   margin-top: 6rpx;
+}
+.publish-container {
+  margin-top: 90rpx;
+  padding: 10rpx 10rpx 10rpx 0;
+}
+.blog-panel {
+  margin-bottom: 20rpx;
 }

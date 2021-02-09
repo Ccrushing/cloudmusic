@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "crush-blog-ctrl":"/components/blog-ctrl/blog-ctrl"
+  }
 }

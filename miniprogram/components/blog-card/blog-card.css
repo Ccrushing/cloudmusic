@@ -1,12 +1,12 @@
 /* components/blog-card/blog-card.wxss */
 page {
-  background-color: #ecc3e0;
+  background-color: #ededed;
 }
 
 .blog {
   width: 100%;
   padding: 20rpx;
-  background-color: #ffcce2;
+  background-color: #fff;
 }
 
 .blog-header {
@@ -73,5 +73,4 @@ page {
 .image-list .image-wrap .img:nth-child(3n) {
   margin-right: 0;
 }
-
 /*# sourceMappingURL=blog-card.css.map */
