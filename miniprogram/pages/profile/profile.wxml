@@ -1,2 +1,1 @@
-<navigation showIcon='{{false}}'  title='我的' isTransparent="{{true}}">
-</navigation>
+<navigation showIcon='{{false}}' title='Crush' colors="{{['#cf8bf3','#fceabb']}}" direction="top"></navigation>

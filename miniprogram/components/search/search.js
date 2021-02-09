@@ -37,8 +37,8 @@ Component({
     onSearch(){
       console.log(keyword)
       this.triggerEvent('search',{
-        keyword
+        keyword,
       })
     },
-  }
+  },
 })

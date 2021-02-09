@@ -2,7 +2,8 @@
   "usingComponents": {
   "xu-search": "/components/search/search",
   "crush-login":"/components/login/login",
-  "crush-blog-card":"/components/blog-card/blog-card"
+  "crush-blog-card":"/components/blog-card/blog-card",
+  "crush-blog-ctrl":"/components/blog-ctrl/blog-ctrl"
  
   },
   "enablePullDownRefresh": true

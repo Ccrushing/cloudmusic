@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "crush-blog-card":"/components/blog-card/blog-card",
+    "crush-blog-ctrl":"/components/blog-ctrl/blog-ctrl"
+  }
+}

@@ -98,6 +98,8 @@ Component({
           modalShow:false,
           content:'',
         })
+        //触发父组件刷新评论页面的方法
+        this.triggerEvent('refreshCommentList')
       })
     },
   }

@@ -35,6 +35,20 @@ exports.main = async (event, context) => {
     })
     ctx.body = blogList
   })
+  //查询博客详情（同时查询出博客的评论列表）
+  app.router('detail',async(ctx,next) => {
+    let blogId = event.blogId
+    //聚合和联表查询，将博客集合居然博客评论集合进行联表查询，匹配博客的_id和评论的blogId字段要相等
+    //将博客评论表的查询查询出来取名为commentList（blogId类似外键的作用）
+    const blog = await blogCollection.aggregate().match({
+      _id: blogId
+    }).lookup({
+      from:'blog-comment',
+      localField:'_id',
+      foreignField:'blogId',
+      as:'commentList'
+    }).end()
+    ctx.body = blog
+  })
   return app.serve()
-  
 }

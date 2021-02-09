@@ -1,6 +1,7 @@
 
 .header{
-  display: flex;
+ 
+  display:flex;
   height: 70rpx;
   line-height: 60rpx;
   padding: 10rpx 0;
@@ -20,6 +21,7 @@
   margin-top: 40rpx;
 }
 .left {
+
   width:64rpx ;
   height: 64rpx;
   display: flex;
@@ -27,6 +29,7 @@
   justify-content: center;
 }
 .right {
+ 
   flex: 1;
   margin-top: 6rpx;
 }

@@ -1,8 +1,15 @@
 let keyword = '' //搜索关键字
 Page({
   data: {
+    //控制底部弹出层是否显示
     modalShow: false,
+    //博客数组
     blogList: [],
+  },
+  goDetail(event) {
+    wx.navigateTo({
+      url: '../../pages/blog-detail/blog-detail?blogId=' + event.target.dataset.blogid,
+    })
   },
   onSearch(event) {
     console.log(event.detail.keyword)

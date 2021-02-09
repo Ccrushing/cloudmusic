@@ -1,0 +1,68 @@
+@import "..\\..\\global.scss";
+
+.container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100rpx;//和底部固定footer等高
+}
+
+.blog-card {
+    margin-bottom: $gap;
+}
+
+.tab {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 $gap;
+    background: $lighterBgColor;
+    border-bottom: 1rpx solid $borderColor;
+    color: #697480;
+}
+
+// 评论列表
+.comment-list {
+    background-color: #fff;
+}
+
+.comment {
+    padding: $gap;
+    border-bottom: 1rpx solid rgba(0,0,0,0.1);
+}
+
+.comment-title {
+    display: flex;
+    align-items: center;
+}
+
+.comment-avatar {
+    width: $primarySize*2;
+    height: $primarySize*2;
+    border-radius: 50%;
+    margin-right: $gap;
+}
+.comment-nickname {
+    flex: 1;
+    color: $lightFontColor;
+}
+.comment-content {
+    font-size: $primarySize;
+    line-height: 1.5;
+    font-weight: 400;
+    padding: $gap 0;
+    color: $lightFontColor;
+}
+.comment-time {
+    font-size: $secondarySize;
+    color: $secondaryColor;
+}
+
+// 底部控制条
+.blog-ctrl {
+    position: fixed;
+    width: 100%;
+    height: 100rpx;
+    left: 0;
+    bottom: 0;
+    border-top: 2rpx solid rgba(0,0,0,0.1);
+}

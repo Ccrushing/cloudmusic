@@ -1,5 +1,6 @@
 <!-- 自定义导航 -->
-<navigation showIcon='{{false}}' isTransparent='{{true}}' title='发现'></navigation>
+<!-- <navigation showIcon='{{false}}' isTransparent='{{true}}' title='发现'></navigation> -->
+<navigation showIcon='{{false}}' title='发布' colors="{{['#cf8bf3','#fceabb']}}" direction="top"></navigation>
 <!-- 顶部搜索区 -->
 <view class="header">
   <view class="left" bind:tap="onPublish">
@@ -15,7 +16,8 @@
 <view class="publish-container">
   <block wx:for="{{blogList}}" wx:key="_id">
     <view class="blog-panel">
-      <crush-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goComment"></crush-blog-card>
+      <crush-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goDetail"></crush-blog-card>
+      <crush-blog-ctrl blogId="{{item._id}}" blog="{{item}}"> </crush-blog-ctrl>
     </view>
   </block>
 </view>
