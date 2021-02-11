@@ -1,39 +1,45 @@
-page {
-  background-color: #ededed;
-}
+// page{
+//   background-color: rgb(185,140,140);
+// }
+@import "..\\..\\global.scss";
 
+//头部
 .profile-header {
-  background-image: url("https://crushing.oss-cn-hangzhou.aliyuncs.com/bg.png");
+  background-image: url('https://crushing.oss-cn-hangzhou.aliyuncs.com/bg.png');
   background-size: cover;
   height: 480rpx;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  color: #fff;
+  color: $lighterBgColor;
 }
 
+//头像
 .avatar {
   width: 200rpx;
   height: 200rpx;
   display: block;
   overflow: hidden;
-  border: 6rpx solid #ccc;
+  border:6rpx solid $borderColor;
   border-radius: 50%;
-  margin-top: 20rpx;
+  margin-top: $gap;
 }
 
+//昵称
 .nickname {
-  font-size: 32rpx;
-  margin-top: 20rpx;
+  font-size: $primarySize;
+  margin-top: $gap;
 }
 
+//功能列表
 .nav {
   overflow: hidden;
-  margin: 20rpx;
+  margin: $gap;
   box-sizing: border-box;
 }
 
+//列表项，每一行
 .nav-item {
   display: flex;
   justify-content: space-between;
@@ -41,23 +47,26 @@ page {
   box-sizing: border-box;
   padding: 0 30rpx;
   min-height: 100rpx;
-  background-color: #fccbd2;
-  border-bottom: 1rpx solid #ccc;
+  background-color: $bgColor;
+  border-bottom: 1rpx solid $borderColor;
 }
 
+//列表内容
 .content {
-  font-size: 32rpx;
+  font-size: $primarySize;
   line-height: 1.6em;
   flex: 1;
   display: flex;
   justify-content: space-between;
 }
 
+//文字
 .text {
-  color: #4B4B4B;
+  color: $primaryColor;
 }
 
+//右箭头图标
 .icon-right.icon-youjiantou {
   font-size: 32rpx;
-  color: 32rpx;
+  color: $primarySize;
 }

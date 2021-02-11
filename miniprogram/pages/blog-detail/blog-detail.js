@@ -35,7 +35,7 @@ Page({
       let commentList = blog.commentList
       //格式化每条评论的时间
       for(let i = 0, len = commentList.length; i < len; i++){
-        commentList[i].creatTime = formatTime(new Date(commentList[i].creatTime))
+        commentList[i].createTime = formatTime(new Date(commentList[i].createTime))
       }
       this.setData({
         commentList,

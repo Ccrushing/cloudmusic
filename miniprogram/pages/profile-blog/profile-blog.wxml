@@ -1,0 +1,31 @@
+<navigation  title='我的博客' colors="{{['#cf8bf3','#fceabb']}}" direction="top"></navigation>
+<view class="container">
+  <view class="main">
+    <block wx:for="{{blogList}}" wx:key="_id">
+      <view class="main-item" bind:tap="goDetail" data-blogid="{{item._id}}">
+        <movable-area>
+          <movable-view
+           damping="100"
+           out-of-bounds="true"
+           direction="horizontal"
+           x="{{item.x}}"
+           animation="true"
+           data-index="{{index}}"
+           bind:change="handleMovableChange"
+           bind:touchstart="handleTouchestart"
+           bind:touchend="handleTouchend"
+          >
+          <view class="item">
+            <view class="row">
+              <image src="{{item.avatarUrl}}" class="avatar"></image>
+              <text class="time">{{item.createTime}}</text>
+            </view>
+            <view class="item-content ellipsis">{{item.content}}</view>
+          </view>
+          </movable-view>
+        </movable-area>
+        <view class="delete-btn" data-index="{{index}}" data-blogid="{{item._id}}" catch:tap="handleDelete">删除</view>
+      </view>
+    </block>
+  </view>
+</view>

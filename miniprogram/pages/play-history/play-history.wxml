@@ -1,0 +1,2 @@
+<navigation  title='最近播放' colors="{{['#cf8bf3','#fceabb']}}" direction="top"></navigation>
+<crush-musiclist musiclist="{{musiclist}}"></crush-musiclist>

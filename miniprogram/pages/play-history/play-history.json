@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "crush-musiclist":"/components/musiclist/musiclist"
+  }
+}

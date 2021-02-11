@@ -1,24 +1,26 @@
+ const app = getApp()
 Page({
-  data: {},
-  onLoad: function (options) {},
-  //生成小程序码
-  onTapQrCode(){
-    wx.showLoading({
-      title: '生成中',
-    })
-    //调用云函数生成小程序码
-    wx.cloud.callFunction({
-      name:'getQrCode'
-    }).then((res) => {
-      console.log(res)
-      const fileId = res.result
-      //预览生成的小程序码图片
-      wx.previewImage({
-        urls: [fileId],
-        current:fileId
+  data: {
+    musiclist:[]
+  },
+  onLoad: function (options) {
+    //取出本地存储key为openid的数据（播放历史）
+    const playHistory = wx.getStorageSync(app.globalData.openid)
+    if(playHistory.length == 0) {
+      wx.showModal({
+        title: '播放历史为空',
+        content:'',
       })
-      wx.hideLoading()
-    })
+    } else {
+      //storage里面存储的musiclist替换成播放历史的歌单
+      wx.setStorage({
+        data: playHistory,
+        key: 'musiclist',
+      })
+      this.setData({
+        musiclist:playHistory
+      })
+    }
   },
 
   /**
@@ -32,7 +34,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**

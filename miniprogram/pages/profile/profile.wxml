@@ -1,1 +1,30 @@
-<navigation showIcon='{{false}}' title='Crush' colors="{{['#cf8bf3','#fceabb']}}" direction="top"></navigation>
+<!-- <navigation showIcon='{{false}}' title='Crush' colors="{{['#cf8bf3','#fceabb']}}" direction="top"></navigation> -->
+<view class="profile-header">
+  <view class="avatar">
+  <!-- 使用open-data来获得头像和昵称 -->
+  <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="nickname"></open-data>
+</view>
+
+<view class="nav">
+  <view class="nav-item">
+  <!-- navigator可以方便的实现页面跳转，这里把hover-class设置为none，去掉点击变灰的效果 -->
+    <navigator class="content" hover-class="none" url="/pages/play-history/play-history">
+      <text class="text">最近播放</text>
+      <i class="iconfont icon-right.icon-youjiantou"></i>
+    </navigator>
+  </view>
+  <view class="nav-item">
+    <navigator class="content" hover-class="none" url="/pages/profile-blog/profile-blog">
+      <text class="text">我的博客</text>
+      <i class="iconfont icon-right.icon-youjiantou"></i>
+    </navigator>
+  </view>
+  <view class="nav-item">
+    <view class="content" bind:tap="onTapQrCode">
+      <text class="text">小程序码</text>
+      <i class="iconfont icon-right.icon-youjiantou"></i>
+   </view>
+  </view>
+</view>
